@@ -1,0 +1,47 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "nama",
+        "dbType": "char",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_kota",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_jam",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_rute",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_harga",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_bus",
+        "dbType": "integer",
+        "htmlType": "text"
+    }
+ 
+]

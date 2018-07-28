@@ -1,0 +1,52 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "id_kategori",
+        "dbType": "integer",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "tgl_berangkat",
+        "validations": "required",
+        "dbType": "dateTime",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_member",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "jml_penumpang",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "total_harga",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "bukti_transfer",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "status",
+        "dbType": "string",
+        "htmlType": "text"
+    }
+ 
+]

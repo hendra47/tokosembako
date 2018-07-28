@@ -1,0 +1,37 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "no_bus",
+        "dbType": "integer",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "kapasitas",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "fasilitas",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "keterangan",
+        "dbType": "string",
+        "htmlType": "textarea"
+    }
+ 
+]
