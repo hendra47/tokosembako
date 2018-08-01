@@ -1,0 +1,32 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "nama",
+        "dbType": "string",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "jk",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "alamat",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    }
+    
+]

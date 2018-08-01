@@ -27,3 +27,12 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('users', 'userController');
 
+Route::resource('absens', 'absenController');
+
+Route::resource('karyawans', 'karyawanController');
+
+Route::resource('jabatan', 'jabatanController');
+
+Route::resource('pembayaran', 'pembayaranController');
+
+Route::resource('gajis', 'gajiController');

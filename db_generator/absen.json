@@ -1,0 +1,32 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "id_karyawan",
+        "dbType": "integer",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "tanggal",
+        "validations": "required",
+        "dbType": "date",
+        "htmlType": "text"
+    },
+    {
+        "name": "shift",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    }
+    
+]

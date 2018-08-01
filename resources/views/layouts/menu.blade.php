@@ -16,6 +16,22 @@
                 <li class="{{ Request::is('users*') ? 'active' : '' }}">
                     <a href="{!! route('users.index') !!}"><i class="fa fa-circle-o"></i><span>Master Users</span></a>
                 </li>
+                <li class="{{ Request::is('absens*') ? 'active' : '' }}">
+                    <a href="{!! route('absens.index') !!}"><i class="fa fa-circle-o"></i><span>Master Absen</span></a>
+                </li>
+                <li class="{{ Request::is('karyawans*') ? 'active' : '' }}">
+                    <a href="{!! route('karyawans.index') !!}"><i class="fa fa-circle-o"></i><span>Master Karyawan</span></a>
+                </li>
+                <li class="{{ Request::is('jabatan*') ? 'active' : '' }}">
+                    <a href="{!! route('jabatan.index') !!}"><i class="fa fa-circle-o"></i><span>Master Jabatan</span></a>
+                </li>
+                <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
+                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span>Master Pembayaran</span></a>
+                </li>
+                <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
+                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
+</li>
+
 
     </ul>
 </li>
@@ -57,6 +73,9 @@
                                         {{ csrf_field() }}
                                     </form>
 </li>
+
+
+
 
 
 

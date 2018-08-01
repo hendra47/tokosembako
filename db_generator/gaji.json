@@ -1,0 +1,38 @@
+[
+    {
+       "name": "id",
+       "dbType": "increments",
+       "htmlType": "",
+       "validations": "",
+       "searchable": true,
+       "fillable": false,
+       "primary": true,
+       "inForm": false,
+       "inIndex": false
+   },
+   {
+        "name": "id_karyawan",
+        "dbType": "integer",
+        "validations": "required",
+        "htmlType": "text"
+    },
+    {
+        "name": "id_jabatan",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "gaji",
+        "validations": "required",
+        "dbType": "integer",
+        "htmlType": "text"
+    },
+    {
+        "name": "keterangan",
+        "validations": "required",
+        "dbType": "string",
+        "htmlType": "text"
+    }
+    
+]
