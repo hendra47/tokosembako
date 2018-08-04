@@ -143,6 +143,14 @@ class spkHelper{
             ->get();
         return $data[0]->nama;
     }
+    //tabel gaji
+     public static function karyawan($id){
+        $data = DB::table('karyawan')
+            ->select('karyawan.nama')
+            ->where('karyawan.id','=',$id)
+            ->get();
+        return $data[0]->nama;
+    }
 
     public static function maxValueInArray($array, $keyToSearch)
     {

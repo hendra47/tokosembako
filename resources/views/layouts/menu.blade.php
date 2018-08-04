@@ -25,11 +25,7 @@
                 <li class="{{ Request::is('jabatan*') ? 'active' : '' }}">
                     <a href="{!! route('jabatan.index') !!}"><i class="fa fa-circle-o"></i><span>Master Jabatan</span></a>
                 </li>
-                <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
-                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span>Master Pembayaran</span></a>
-                </li>
-                <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
-                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
+                
 </li>
 
 
@@ -48,8 +44,12 @@
     </span>
     </a>
     <ul class="treeview-menu">
-        
-    </ul>
+        <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
+                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span>Master Pembayaran</span></a>
+                </li>
+        <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
+                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
+                </ul>
 </li>
 
 <li class="treeview">

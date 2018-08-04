@@ -6,8 +6,12 @@
 
 <!-- Jk Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('jk', 'Jk:') !!}
-    {!! Form::text('jk', null, ['class' => 'form-control']) !!}
+    <label>Jenis Kelamin</label>
+    <select name="jk" class="form-control">
+    	<option value=""></option>
+    	<option value="L">L</option>
+    	<option value="P">P</option>
+    </select>
 </div>
 
 <!-- Alamat Field -->

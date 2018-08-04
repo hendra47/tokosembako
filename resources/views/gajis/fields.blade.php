@@ -1,6 +1,6 @@
 <!-- Id Karyawan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_karyawan', 'Id Karyawan:') !!}
+    {!! Form::label('id_karyawan', 'Nama Karyawan:') !!}
     {!! Form::text('id_karyawan', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -27,3 +27,4 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('gajis.index') !!}" class="btn btn-default">Cancel</a>
 </div>
+
