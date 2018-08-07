@@ -16,14 +16,15 @@
                 <li class="{{ Request::is('users*') ? 'active' : '' }}">
                     <a href="{!! route('users.index') !!}"><i class="fa fa-circle-o"></i><span>Master Users</span></a>
                 </li>
-                <li class="{{ Request::is('absens*') ? 'active' : '' }}">
-                    <a href="{!! route('absens.index') !!}"><i class="fa fa-circle-o"></i><span>Master Absen</span></a>
-                </li>
+                
                 <li class="{{ Request::is('karyawans*') ? 'active' : '' }}">
                     <a href="{!! route('karyawans.index') !!}"><i class="fa fa-circle-o"></i><span>Master Karyawan</span></a>
                 </li>
                 <li class="{{ Request::is('jabatan*') ? 'active' : '' }}">
                     <a href="{!! route('jabatan.index') !!}"><i class="fa fa-circle-o"></i><span>Master Jabatan</span></a>
+                </li>
+                <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
+                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
                 </li>
                 
 </li>
@@ -44,12 +45,15 @@
     </span>
     </a>
     <ul class="treeview-menu">
+        
+        <li class="{{ Request::is('absens*') ? 'active' : '' }}">
+                    <a href="{!! route('absens.index') !!}"><i class="fa fa-circle-o"></i><span> Absen</span></a>
+        </li>
         <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
-                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span>Master Pembayaran</span></a>
-                </li>
-        <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
-                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
-                </ul>
+                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span> Pembayaran</span></a>
+        </li>
+        
+    </ul>
 </li>
 
 <li class="treeview">
@@ -61,7 +65,9 @@
     </span>
     </a>
     <ul class="treeview-menu">
-            <a href="#"><i class="fa fa-circle-o"></i><span>Laporan</span></a>
+        <li class="{{ Request::is('absens*') ? 'active' : '' }}">
+                <a href="#"><i class="fa fa-circle-o"></i><span>Laporan</span></a>
+        </li>
     </ul>
 </li>
 
