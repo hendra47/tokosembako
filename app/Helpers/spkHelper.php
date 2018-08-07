@@ -99,12 +99,26 @@ class spkHelper{
         return $data[0]->kriteria;
     }
     //tabel kategori/Class
-    public static function kota($id){
-        $data = DB::table('kota')
-            ->select('kota.nama')
-            ->where('kota.id','=',$id)
+    public static function karyawan($id){
+        $data = DB::table('karyawan')
+            ->select('karyawan.nama')
+            ->where('karyawan.id','=',$id)
             ->get();
         return $data[0]->nama;
+    }
+    public static function gaji($id){
+        $data = DB::table('gaji')
+            ->select('gaji.gaji')
+            ->where('gaji.id_karyawan','=',$id)
+            ->get();
+        return $data[0]->gaji;
+    }
+    public static function jabatan($id){
+        $data = DB::table('jabatan')
+            ->select('jabatan.jabatan')
+            ->where('jabatan.id','=',$id)
+            ->get();
+        return $data[0]->jabatan;
     }
     public static function harga($id){
         $data = DB::table('harga')
@@ -140,14 +154,6 @@ class spkHelper{
         $data = DB::table('member')
             ->select('member.nama')
             ->where('member.id','=',$id)
-            ->get();
-        return $data[0]->nama;
-    }
-    //tabel gaji
-     public static function karyawan($id){
-        $data = DB::table('karyawan')
-            ->select('karyawan.nama')
-            ->where('karyawan.id','=',$id)
             ->get();
         return $data[0]->nama;
     }

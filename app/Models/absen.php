@@ -25,7 +25,8 @@ class absen extends Model
     public $fillable = [
         'id_karyawan',
         'tanggal',
-        'shift'
+        'shift',
+        'status'
     ];
 
     /**
@@ -36,7 +37,8 @@ class absen extends Model
     protected $casts = [
         'id_karyawan' => 'integer',
         'tanggal' => 'date',
-        'shift' => 'integer'
+        'shift' => 'integer',
+        'status' => 'string'
     ];
 
     /**
@@ -47,7 +49,8 @@ class absen extends Model
     public static $rules = [
         'id_karyawan' => 'required',
         'tanggal' => 'required',
-        'shift' => 'required'
+        'shift' => 'required',
+        'status' => 'required'
     ];
 
     

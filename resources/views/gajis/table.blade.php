@@ -1,7 +1,8 @@
 <table class="table table-responsive" id="gajis-table">
     <thead>
-        <th>Id Karyawan</th>
-        <th>Id Jabatan</th>
+        <th>ID</th>
+        <th>Karyawan</th>
+        <th>Jabatan</th>
         <th>Gaji</th>
         <th>Keterangan</th>
         <th colspan="3">Action</th>
@@ -9,8 +10,9 @@
     <tbody>
     @foreach($gajis as $gaji)
         <tr>
-            <td>{!! $gaji->id_karyawan !!}</td>
-            <td>{!! $gaji->id_jabatan !!}</td>
+            <td>{!! $gaji->id !!}</td>
+            <td>{!! App\Helpers\spkHelper::karyawan($gaji->id_karyawan) !!}</td>
+            <td>{!! App\Helpers\spkHelper::jabatan($gaji->id_jabatan) !!}</td>
             <td>{!! $gaji->gaji !!}</td>
             <td>{!! $gaji->keterangan !!}</td>
             <td>

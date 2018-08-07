@@ -19,8 +19,14 @@ Auth::routes();
 
 
 
+//absen
+Route::post('/laporan-absen-cari', 'laporan1@cari');
+Route::get('/laporan1', 'laporan1@laporan');
+Route::get('/laporan-absen-cari', 'laporan1@laporan');
 
-
+//bayar gaji
+Route::post('/bayar-gaji', 'laporan2@cari');
+Route::get('/bayar-gaji', 'pembayaranController@create');
 
 
 Route::get('/home', 'HomeController@index');

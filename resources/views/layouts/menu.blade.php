@@ -23,9 +23,6 @@
                 <li class="{{ Request::is('jabatan*') ? 'active' : '' }}">
                     <a href="{!! route('jabatan.index') !!}"><i class="fa fa-circle-o"></i><span>Master Jabatan</span></a>
                 </li>
-                <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
-                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Master Gaji</span></a>
-                </li>
                 
 </li>
 
@@ -45,12 +42,11 @@
     </span>
     </a>
     <ul class="treeview-menu">
-        
+        <li class="{{ Request::is('gajis*') ? 'active' : '' }}">
+                    <a href="{!! route('gajis.index') !!}"><i class="fa fa-circle-o"></i><span>Gaji</span></a>
+        </li>
         <li class="{{ Request::is('absens*') ? 'active' : '' }}">
                     <a href="{!! route('absens.index') !!}"><i class="fa fa-circle-o"></i><span> Absen</span></a>
-        </li>
-        <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
-                    <a href="{!! route('pembayaran.index') !!}"><i class="fa fa-circle-o"></i><span> Pembayaran</span></a>
         </li>
         
     </ul>
@@ -66,7 +62,10 @@
     </a>
     <ul class="treeview-menu">
         <li class="{{ Request::is('absens*') ? 'active' : '' }}">
-                <a href="#"><i class="fa fa-circle-o"></i><span>Laporan</span></a>
+                <a href="{!! url('/laporan1') !!}"><i class="fa fa-circle-o"></i><span>Absensi</span></a>
+        </li>
+        <li class="{{ Request::is('pembayaran*') ? 'active' : '' }}">
+                    <a href="{!! route('pembayaran.create') !!}"><i class="fa fa-circle-o"></i><span> Perhitungan Gaji</span></a>
         </li>
     </ul>
 </li>
@@ -77,7 +76,7 @@
     <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                                           style="display: none;">
                                         {{ csrf_field() }}
-                                    </form>
+    </form>
 </li>
 
 

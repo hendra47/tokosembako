@@ -1,14 +1,33 @@
-<!-- Id Karyawan Field -->
+
 <div class="form-group col-sm-6">
     {!! Form::label('id_karyawan', 'Nama Karyawan:') !!}
-    {!! Form::text('id_karyawan', null, ['class' => 'form-control']) !!}
+<select class="form-control" name="id_karyawan">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$gaji->id_karyawan}}">{!! App\Helpers\spkHelper::karyawan($gaji->id_karyawan) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
+     @foreach($karyawan as $item)
+     <option value="{{ $item->id }}">{{ $item->nama }}</option>
+     @endforeach
+</select>
 </div>
 
 <!-- Id Jabatan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_jabatan', 'Id Jabatan:') !!}
-    {!! Form::text('id_jabatan', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_jabatan', 'Jabatan:') !!}
+<select class="form-control" name="id_jabatan">
+    @if(Request::segment(3)=="edit")
+        <option value="{{$gaji->id_jabatan}}">{!! App\Helpers\spkHelper::jabatan($gaji->id_jabatan) !!}</option>
+    @else
+        <option value=""></option>
+    @endif
+     @foreach($jabatan as $item)
+     <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+     @endforeach
+</select>
 </div>
+
 
 <!-- Gaji Field -->
 <div class="form-group col-sm-6">

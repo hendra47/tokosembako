@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Support\Facades\DB;
 
 class absenController extends AppBaseController
 {
@@ -36,6 +37,8 @@ class absenController extends AppBaseController
             ->with('absens', $absens);
     }
 
+   
+
     /**
      * Show the form for creating a new absen.
      *
@@ -43,7 +46,12 @@ class absenController extends AppBaseController
      */
     public function create()
     {
-        return view('absens.create');
+
+        $karyawan = DB::table('karyawan')
+        ->select('id','nama')
+        ->get();
+        return view('absens.create')
+               ->with(['karyawan'=>$karyawan]);
     }
 
     /**
@@ -63,6 +71,7 @@ class absenController extends AppBaseController
 
         return redirect(route('absens.index'));
     }
+
 
     /**
      * Display the specified absen.
@@ -100,8 +109,10 @@ class absenController extends AppBaseController
 
             return redirect(route('absens.index'));
         }
-
-        return view('absens.edit')->with('absen', $absen);
+        $karyawan = DB::table('karyawan')
+        ->select('id','nama')
+        ->get();
+        return view('absens.edit')->with(['absen'=>$absen,'karyawan'=>$karyawan]);
     }
 
     /**

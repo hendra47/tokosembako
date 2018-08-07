@@ -17,6 +17,7 @@
             <div class="box-body">
                 <table class="table table-responsive" id="karyawans-table">
     <thead>
+        <th>ID</th>
         <th>Jabatan</th>
         <th>Keterangan</th>
         <th colspan="3">Action</th>
@@ -24,6 +25,7 @@
     <tbody>
     @foreach($data as $karyawan)
         <tr>
+            <td>{!! $karyawan->id !!}</td>
             <td>{!! $karyawan->jabatan !!}</td>
             <td>{!! $karyawan->keterangan !!}</td>
             <td>

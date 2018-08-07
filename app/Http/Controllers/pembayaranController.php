@@ -17,7 +17,8 @@ class pembayaranController extends Controller
     	return view('pembayaran.index')->with('data',$data); 
     }
     public function create(){
-    	//return view('pembayaran.index');
+    	$data=pembayaran::all();
+    	return view('pembayaran.laporan')->with('data',$data); 
     }
     public function store(Request $request){
     	pembayaran::create($request->all());

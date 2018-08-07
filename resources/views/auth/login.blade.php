@@ -33,7 +33,7 @@
 
 </head>
 <body class="hold-transition login-page" 
-style="background: url({{ URL::asset('/img/bg.jpg') }});
+style="background: url({{ URL::asset('/img/bg.png') }});
     background-repeat: no-repeat;
     background-size: 100%">
     <div class="login-box">

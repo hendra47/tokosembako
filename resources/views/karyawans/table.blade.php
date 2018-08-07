@@ -1,5 +1,6 @@
 <table class="table table-responsive" id="karyawans-table">
     <thead>
+        <th>ID</th>
         <th>Nama</th>
         <th>Jk</th>
         <th>Alamat</th>
@@ -8,6 +9,7 @@
     <tbody>
     @foreach($karyawans as $karyawan)
         <tr>
+            <td>{!! $karyawan->id !!}</td>
             <td>{!! $karyawan->nama !!}</td>
             <td>{!! $karyawan->jk !!}</td>
             <td>{!! $karyawan->alamat !!}</td>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Support\Facades\DB;
 
 class gajiController extends AppBaseController
 {
@@ -43,7 +44,14 @@ class gajiController extends AppBaseController
      */
     public function create()
     {
-        return view('gajis.create');
+        $karyawan = DB::table('karyawan')
+        ->select('id','nama')
+        ->get();
+        $jabatan = DB::table('jabatan')
+        ->select('id','jabatan')
+        ->get();
+        return view('gajis.create')
+               ->with(['karyawan'=>$karyawan,'jabatan'=>$jabatan]);
     }
 
     /**
@@ -101,7 +109,15 @@ class gajiController extends AppBaseController
             return redirect(route('gajis.index'));
         }
 
-        return view('gajis.edit')->with('gaji', $gaji);
+
+        $karyawan = DB::table('karyawan')
+        ->select('id','nama')
+        ->get();
+
+        $jabatan = DB::table('jabatan')
+        ->select('id','jabatan')
+        ->get();
+        return view('gajis.edit')->with(['gaji'=>$gaji,'karyawan'=>$karyawan,'jabatan'=>$jabatan]);
     }
 
     /**

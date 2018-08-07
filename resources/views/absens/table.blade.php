@@ -1,16 +1,20 @@
 <table class="table table-responsive" id="absens-table">
     <thead>
-        <th>Id Karyawan</th>
+        <th>ID</th>
+        <th>Karyawan</th>
         <th>Tanggal</th>
         <th>Shift</th>
+        <th>Status</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($absens as $absen)
         <tr>
-            <td>{!! $absen->id_karyawan !!}</td>
-            <td>{!! $absen->tanggal !!}</td>
+            <td>{!! $absen->id !!}</td>
+            <td>{!! App\Helpers\spkHelper::karyawan($absen->id_karyawan) !!}</td>
+            <td>{!! date_format($absen->tanggal,'d-m-Y') !!}</td>
             <td>{!! $absen->shift !!}</td>
+            <td>{!! $absen->status !!}</td>
             <td>
                 {!! Form::open(['route' => ['absens.destroy', $absen->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
