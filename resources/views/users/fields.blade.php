@@ -25,7 +25,8 @@
 <div class="form-group col-sm-6">
     {!! Form::label('group', 'Group:') !!}
     {!! Form::select('group', ['admin' => 'Admin', 
-                               'manager' => 'Manager'], null, ['class' => 'form-control']) !!}
+                               'manager' => 'Manager',
+                               'payroll' => 'Payroll'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
