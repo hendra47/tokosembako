@@ -21,6 +21,7 @@ class gaji extends Model
 
     public $table = 'gaji';
     
+   protected $primaryKey = 'id_gaji';
 
 
     public $fillable = [

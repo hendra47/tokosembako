@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($data, ['route' => ['jabatan.update', $data->id], 'method' => 'patch']) !!}
+                   {!! Form::model($data, ['route' => ['jabatan.update', $data->id_jabatan], 'method' => 'patch']) !!}
 
 <!-- Jk Field -->
 <div class="form-group col-sm-6">

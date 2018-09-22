@@ -12,8 +12,8 @@
                 <div class="row" style="padding-left: 20px">
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $data->id !!}</p>
+    {!! Form::label('id', 'Id Jabatan:') !!}
+    <p>{!! $data->id_jabatan !!}</p>
 </div>
 
 <!-- Jabatan Field -->

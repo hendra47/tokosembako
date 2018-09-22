@@ -17,7 +17,7 @@
             <div class="box-body">
                 <table class="table table-responsive" id="karyawans-table">
     <thead>
-        <th>ID</th>
+        <th>ID Jabatan</th>
         <th>Jabatan</th>
         <th>Keterangan</th>
         <th colspan="3">Action</th>
@@ -25,14 +25,14 @@
     <tbody>
     @foreach($data as $karyawan)
         <tr>
-            <td>{!! $karyawan->id !!}</td>
+            <td>{!! $karyawan->id_jabatan !!}</td>
             <td>{!! $karyawan->jabatan !!}</td>
             <td>{!! $karyawan->keterangan !!}</td>
             <td>
-                {!! Form::open(['route' => ['jabatan.destroy', $karyawan->id], 'method' => 'delete']) !!}
+                {!! Form::open(['route' => ['jabatan.destroy', $karyawan->id_jabatan], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    <a href="{!! route('jabatan.show', [$karyawan->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
-                    <a href="{!! route('jabatan.edit', [$karyawan->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="{!! route('jabatan.show', [$karyawan->id_jabatan]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                    <a href="{!! route('jabatan.edit', [$karyawan->id_jabatan]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>
                 {!! Form::close() !!}

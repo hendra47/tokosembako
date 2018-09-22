@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2018 at 03:24 PM
+-- Generation Time: Sep 22, 2018 at 06:47 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `absen` (
-  `id` int(11) NOT NULL,
+  `id_absen` int(11) NOT NULL,
   `id_karyawan` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `shift` int(11) NOT NULL,
@@ -42,9 +42,8 @@ CREATE TABLE `absen` (
 -- Dumping data for table `absen`
 --
 
-INSERT INTO `absen` (`id`, `id_karyawan`, `tanggal`, `shift`, `created_at`, `updated_at`, `status`) VALUES
-(4, 3, '2018-08-07', 2, '2018-08-07 13:26:33', '2018-08-07 15:41:24', 'Hadir'),
-(5, 3, '2018-08-08', 2, '2018-08-07 15:51:32', '2018-08-07 15:51:32', 'Hadir');
+INSERT INTO `absen` (`id_absen`, `id_karyawan`, `tanggal`, `shift`, `created_at`, `updated_at`, `status`) VALUES
+(5, 4, '2018-09-05', 2, '2018-08-07 15:51:32', '2018-09-22 16:06:20', 'Hadir');
 
 -- --------------------------------------------------------
 
@@ -78,7 +77,7 @@ INSERT INTO `akses` (`id`, `group`, `menu`, `keterangan`, `created_at`, `updated
 --
 
 CREATE TABLE `gaji` (
-  `id` int(11) NOT NULL,
+  `id_gaji` int(11) NOT NULL,
   `id_karyawan` int(11) NOT NULL,
   `id_jabatan` int(11) NOT NULL,
   `gaji` decimal(10,0) NOT NULL,
@@ -91,8 +90,8 @@ CREATE TABLE `gaji` (
 -- Dumping data for table `gaji`
 --
 
-INSERT INTO `gaji` (`id`, `id_karyawan`, `id_jabatan`, `gaji`, `keterangan`, `created_at`, `updated_at`) VALUES
-(1, 3, 11, '180000', 'Harian', '2018-08-07 13:38:01', '2018-08-07 13:45:21');
+INSERT INTO `gaji` (`id_gaji`, `id_karyawan`, `id_jabatan`, `gaji`, `keterangan`, `created_at`, `updated_at`) VALUES
+(1, 4, 11, '180000', 'Harian', '2018-08-07 13:38:01', '2018-08-07 13:45:21');
 
 -- --------------------------------------------------------
 
@@ -101,7 +100,7 @@ INSERT INTO `gaji` (`id`, `id_karyawan`, `id_jabatan`, `gaji`, `keterangan`, `cr
 --
 
 CREATE TABLE `jabatan` (
-  `id` int(11) NOT NULL,
+  `id_jabatan` int(11) NOT NULL,
   `jabatan` char(70) NOT NULL,
   `keterangan` text NOT NULL,
   `created_at` datetime NOT NULL,
@@ -112,7 +111,7 @@ CREATE TABLE `jabatan` (
 -- Dumping data for table `jabatan`
 --
 
-INSERT INTO `jabatan` (`id`, `jabatan`, `keterangan`, `created_at`, `updated_at`) VALUES
+INSERT INTO `jabatan` (`id_jabatan`, `jabatan`, `keterangan`, `created_at`, `updated_at`) VALUES
 (9, 'supervisor', 'A1', '2018-07-30 15:55:56', '2018-08-03 14:45:22'),
 (11, 'leader', 'A2', '2018-07-31 02:25:46', '2018-08-03 14:45:34');
 
@@ -123,7 +122,7 @@ INSERT INTO `jabatan` (`id`, `jabatan`, `keterangan`, `created_at`, `updated_at`
 --
 
 CREATE TABLE `karyawan` (
-  `id` int(11) NOT NULL,
+  `id_karyawan` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `jk` char(1) NOT NULL,
   `alamat` text NOT NULL,
@@ -135,8 +134,8 @@ CREATE TABLE `karyawan` (
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`id`, `nama`, `jk`, `alamat`, `created_at`, `updated_at`) VALUES
-(3, 'koko', 'L', 'tangerang', '2018-08-03 14:44:02', '2018-08-03 14:44:02');
+INSERT INTO `karyawan` (`id_karyawan`, `nama`, `jk`, `alamat`, `created_at`, `updated_at`) VALUES
+(4, 'jaka', 'L', 'jakarta', '2018-09-08 14:40:24', '2018-09-08 14:40:24');
 
 -- --------------------------------------------------------
 
@@ -172,7 +171,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `pembayaran` (
-  `id` int(11) NOT NULL,
+  `id_pembayaran` int(11) NOT NULL,
   `periode` varchar(200) NOT NULL,
   `total_pembayaran` decimal(10,0) NOT NULL,
   `created_at` datetime NOT NULL,
@@ -202,7 +201,7 @@ CREATE TABLE `pembayaran_detail` (
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id_user` int(10) UNSIGNED NOT NULL,
   `nik` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -216,8 +215,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nik`, `name`, `username`, `password`, `group`, `created_at`, `updated_at`) VALUES
-(1, '10102', 'Administrator', 'admin', '$2y$10$Gmkat619O8B3XqmkYUZ8he9N9fBCLq6jUczCHK/Pbppf04O2Vucbi', 'admin', '2017-08-19 09:32:29', '2017-08-19 09:32:29'),
+INSERT INTO `users` (`id_user`, `nik`, `name`, `username`, `password`, `group`, `created_at`, `updated_at`) VALUES
+(1, '10102', 'Administrator', 'admin', '$2y$10$AFtA9GE6ilZAezJWrrecP.jJzXwaRCCyCZEo.fySqg5YBMR.bVBh6', 'admin', '2017-08-19 09:32:29', '2018-09-22 08:26:17'),
 (5, '10103', 'Manager', 'manager', '$2y$10$LOBnk4Ntt/aVZ6mTqWgQEOE3pSgKHqp9cEyI3i2W5zmg5vaGSY.Cy', 'manager', '2018-07-15 00:15:57', '2018-07-15 00:15:57'),
 (6, '111', 'payroll', 'payroll', '$2y$10$nXuiIx9qWqeN0YgENjdWfOzb9OAbaxq4.a5e3WyC1h2rHv6AJ9hb6', 'payroll', '2018-08-15 06:23:32', '2018-08-15 06:23:32');
 
@@ -229,25 +228,25 @@ INSERT INTO `users` (`id`, `nik`, `name`, `username`, `password`, `group`, `crea
 -- Indexes for table `absen`
 --
 ALTER TABLE `absen`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_absen`);
 
 --
 -- Indexes for table `gaji`
 --
 ALTER TABLE `gaji`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_gaji`);
 
 --
 -- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_jabatan`);
 
 --
 -- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_karyawan`);
 
 --
 -- Indexes for table `migrations`
@@ -259,7 +258,7 @@ ALTER TABLE `migrations`
 -- Indexes for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_pembayaran`);
 
 --
 -- Indexes for table `pembayaran_detail`
@@ -271,7 +270,7 @@ ALTER TABLE `pembayaran_detail`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `users_nik_unique` (`nik`),
   ADD UNIQUE KEY `users_username_unique` (`username`);
 
@@ -283,25 +282,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gaji`
 --
 ALTER TABLE `gaji`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_gaji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -313,7 +312,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pembayaran_detail`
@@ -325,7 +324,7 @@ ALTER TABLE `pembayaran_detail`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

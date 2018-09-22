@@ -19,25 +19,38 @@ class jabatanController extends Controller
     public function create(){
     	return view('jabatan.create');
     }
-     public function show($id){
-        $data=jabatan::find($id);
-        return view('jabatan.show')->with('data',$data);
-    } 
     public function store(Request $request){
-    	jabatan::create($request->all());
+        jabatan::create($request->all());
+        Flash::success('Jabatan saved successfully.');
         return redirect('jabatan');
     }
+     public function show($id){
+        $data=jabatan::find($id);
+        if (empty($data)) {
+            Flash::error('Jabatan not found');
+
+            return redirect(route('jabatan.index'));
+        }
+        return view('jabatan.show')->with('data',$data);
+    } 
+    
     public function edit($id){
     	$data=jabatan::find($id);
+         if (empty($data)) {
+            Flash::error('Jabatan not found');
+
+            return redirect(route('jabatan.index'));
+        }
     	return view('jabatan.edit')->with('data',$data);
     }
     public function update(Request $request,$id){
     	jabatan::find($id)->update($request->all());
+        Flash::success('Jabatan saved successfully.');
         return redirect('jabatan');
     }
     public function destroy($id){
     	jabatan::find($id)->delete();
-        Flash::success('terhapus');
+        Flash::success('Jabatan deleted successfully.');
     	return redirect('jabatan');	
     }
 

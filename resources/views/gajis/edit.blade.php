@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($gaji, ['route' => ['gajis.update', $gaji->id], 'method' => 'patch']) !!}
+                   {!! Form::model($gaji, ['route' => ['gajis.update', $gaji->id_gaji], 'method' => 'patch']) !!}
 
                         @include('gajis.fields')
 

@@ -1,4 +1,4 @@
-
+<?php //dd(Request::segment(3)); ?>
 <div class="form-group col-sm-6">
     {!! Form::label('id_karyawan', 'Nama Karyawan:') !!}
 <select class="form-control" name="id_karyawan">
@@ -8,7 +8,7 @@
         <option value=""></option>
     @endif
      @foreach($karyawan as $item)
-     <option value="{{ $item->id }}">{{ $item->nama }}</option>
+     <option value="{{ $item->id_karyawan }}">{{ $item->nama }}</option>
      @endforeach
 </select>
 </div>
@@ -23,7 +23,7 @@
         <option value=""></option>
     @endif
      @foreach($jabatan as $item)
-     <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+     <option value="{{ $item->id_jabatan }}">{{ $item->jabatan }}</option>
      @endforeach
 </select>
 </div>

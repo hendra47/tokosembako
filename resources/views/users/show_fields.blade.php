@@ -1,7 +1,7 @@
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $user->id !!}</p>
+    {!! Form::label('id', 'Id User:') !!}
+    <p>{!! $user->id_user !!}</p>
 </div>
 
 <!-- Nik Field -->

@@ -34,6 +34,10 @@
                     if(isset($absens) && count($absens)>0 ){
                 ?>
                 <div id='printarea' class="form-group col-sm-12">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <h2>Toko Aan</h2>
+                        <p>Jl.Lippo Karawaci</p>
+                    </div>
                     <table class="table table-responsive" id="absens-table">
                         <thead>
                             <th>No</th>

@@ -48,7 +48,7 @@ class absenController extends AppBaseController
     {
 
         $karyawan = DB::table('karyawan')
-        ->select('id','nama')
+        ->select('id_karyawan','nama')
         ->get();
         return view('absens.create')
                ->with(['karyawan'=>$karyawan]);
@@ -110,7 +110,7 @@ class absenController extends AppBaseController
             return redirect(route('absens.index'));
         }
         $karyawan = DB::table('karyawan')
-        ->select('id','nama')
+        ->select('id_karyawan','nama')
         ->get();
         return view('absens.edit')->with(['absen'=>$absen,'karyawan'=>$karyawan]);
     }

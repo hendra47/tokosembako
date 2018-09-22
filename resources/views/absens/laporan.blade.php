@@ -34,6 +34,10 @@
                     if(isset($absens) && count($absens)>0 ){
                 ?>
                 <div id='printarea' class="form-group col-sm-12">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <h2>Toko Aan</h2>
+                        <p>Jl.Lippo Karawaci</p>
+                    </div>
                     <table class="table table-responsive" id="absens-table">
                         <thead>
                             <th>ID</th>
@@ -45,7 +49,7 @@
                         <tbody>
                         @foreach($absens as $absen)
                             <tr>
-                                <td>{!! $absen->id !!}</td>
+                                <td>{!! $absen->id_absen !!}</td>
                                 <td>{!! App\Helpers\spkHelper::karyawan($absen->id_karyawan) !!}</td>
                                 <td>{!! $absen->tanggal !!}</td>
                                 <td>{!! $absen->shift !!}</td>

@@ -21,6 +21,7 @@ class absen extends Model
     public $table = 'absen';
     
 
+   protected $primaryKey = 'id_absen';
 
     public $fillable = [
         'id_karyawan',

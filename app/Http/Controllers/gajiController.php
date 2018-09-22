@@ -45,10 +45,10 @@ class gajiController extends AppBaseController
     public function create()
     {
         $karyawan = DB::table('karyawan')
-        ->select('id','nama')
+        ->select('id_karyawan','nama')
         ->get();
         $jabatan = DB::table('jabatan')
-        ->select('id','jabatan')
+        ->select('id_jabatan','jabatan')
         ->get();
         return view('gajis.create')
                ->with(['karyawan'=>$karyawan,'jabatan'=>$jabatan]);
@@ -111,11 +111,11 @@ class gajiController extends AppBaseController
 
 
         $karyawan = DB::table('karyawan')
-        ->select('id','nama')
+        ->select('id_karyawan','nama')
         ->get();
 
         $jabatan = DB::table('jabatan')
-        ->select('id','jabatan')
+        ->select('id_jabatan','jabatan')
         ->get();
         return view('gajis.edit')->with(['gaji'=>$gaji,'karyawan'=>$karyawan,'jabatan'=>$jabatan]);
     }

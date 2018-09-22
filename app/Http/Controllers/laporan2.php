@@ -14,13 +14,13 @@ class laporan2 extends Controller
         $input = $request->all();
         if(empty($input['tanggal']) OR empty($input['tanggal2']) ){
             $karyawan = DB::table('karyawan')
-            ->select('id','nama')
+            ->select('id_karyawan','nama')
             ->get();
             Flash::error('Tanggal Harus Diisi');
             return view('pembayaran.laporan')->with(['karyawan'=>$karyawan]);
         }
             $karyawan = DB::table('karyawan')
-            ->select('id','nama')
+            ->select('id_karyawan','nama')
             ->get();
 
             $absen = DB::table('absen')
@@ -41,7 +41,7 @@ class laporan2 extends Controller
     public function laporan(Request $request)
     {
         $karyawan = DB::table('karyawan')
-        ->select('id','nama')
+        ->select('id_karyawan','nama')
         ->get();
         return view('pembayaran.laporan')->with(['karyawan'=>$karyawan]);
     }

@@ -20,7 +20,7 @@ class karyawan extends Model
 
     public $table = 'karyawan';
     
-
+   protected $primaryKey = 'id_karyawan';
 
     public $fillable = [
         'nama',

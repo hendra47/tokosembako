@@ -71,7 +71,7 @@ class spkHelper{
         $akses = DB::table('users')
             ->select('users.*','hak_akses.*')
             ->join('hak_akses', 'hak_akses.group', '=', 'users.group')
-            ->where('users.id','=',$currentUser->id)
+            ->where('users.id_user','=',$currentUser->id)
             ->get();
         $data=explode(',',$akses[0]->menu);
 
@@ -102,7 +102,7 @@ class spkHelper{
     public static function karyawan($id){
         $data = DB::table('karyawan')
             ->select('karyawan.nama')
-            ->where('karyawan.id','=',$id)
+            ->where('karyawan.id_karyawan','=',$id)
             ->get();
         return $data[0]->nama;
     }
@@ -116,7 +116,7 @@ class spkHelper{
     public static function jabatan($id){
         $data = DB::table('jabatan')
             ->select('jabatan.jabatan')
-            ->where('jabatan.id','=',$id)
+            ->where('jabatan.id_jabatan','=',$id)
             ->get();
         return $data[0]->jabatan;
     }
@@ -135,13 +135,17 @@ class spkHelper{
         return $data[0]->jam;
     }
 
-    public static function bus($id){
-        $data = DB::table('bus')
-            ->select('bus.no_bus')
-            ->where('bus.id','=',$id)
+    public static function list($id){
+        $data = DB::table('list1')
+            ->select('list1.title')
+            ->where('list1.id','=',$id)
             ->get();
-        return $data[0]->no_bus;
+        return $data[0]->title;
     }
+
+
+
+
     public static function rute($id){
         $data = DB::table('rute')
             ->select('rute.rute')

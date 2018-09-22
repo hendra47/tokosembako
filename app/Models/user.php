@@ -23,6 +23,9 @@ class user extends Model
     
     public $remember_token=false;
 
+
+   protected $primaryKey = 'id_user';
+
     public $fillable = [
         'name',
         'username',
